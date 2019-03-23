@@ -3,14 +3,24 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"sort"
 	"time"
 )
 
 func main() {
 	for i := 0; i < 10; i++ {
 		a := generateSlice(i)
+		b := make([]int, len(a))
+		copy(b, a) // copy to b from a
 		iSort(a)
-		fmt.Printf("a: %v", a)
+		sort.Ints(b)
+
+		for k, v := range b {
+			if v != a[k] {
+				fmt.Printf("different at :%d", k)
+			}
+		}
+		fmt.Printf("a: %v \nb: %v\n", a, b)
 	}
 }
 
