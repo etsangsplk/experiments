@@ -24,8 +24,11 @@ func main() {
 	}
 }
 
-//
-func iSort(a []int) {
+// Maintain a sorted and "unknown" sections.
+// Sorted section started at 0
+// Try to find the smallest element from the unknown sections
+// and add to the "sorted" section.
+func insertionSort(a []int) {
 	n := len(a)
 	i := 0
 	for i < n {
@@ -33,7 +36,6 @@ func iSort(a []int) {
 		for j < n {
 			if a[i] > a[j] {
 				swap(&a[i], &a[j])
-				// a[i], a[j] = a[j], a[i]
 			}
 			j++
 		}
@@ -42,12 +44,12 @@ func iSort(a []int) {
 
 }
 
-//
+// helper swap function.
 func swap(a *int, b *int) {
 	*a, *b = *b, *a
 }
 
-// Generates a slice of size, size filled with random numbers
+// generates a slice of size, size filled with random numbers
 func generateSlice(size int) []int {
 
 	slice := make([]int, size, size)
