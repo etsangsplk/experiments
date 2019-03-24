@@ -2,17 +2,17 @@ package main
 
 import (
 	"fmt"
-	"math/rand"
 	"sort"
-	"time"
+
+	"./helper"
 )
 
 func main() {
 	for i := 0; i < 10; i++ {
-		a := generateSlice(i)
+		a := helper.GenerateSlice(i)
 		b := make([]int, len(a))
 		copy(b, a) // copy to b from a
-		iSort(a)
+		insertionSort(a)
 		sort.Ints(b)
 
 		for k, v := range b {
@@ -35,27 +35,11 @@ func insertionSort(a []int) {
 		j := i + 1
 		for j < n {
 			if a[i] > a[j] {
-				swap(&a[i], &a[j])
+				helper.Swap(&a[i], &a[j])
 			}
 			j++
 		}
 		i++
 	}
 
-}
-
-// helper swap function.
-func swap(a *int, b *int) {
-	*a, *b = *b, *a
-}
-
-// generates a slice of size, size filled with random numbers
-func generateSlice(size int) []int {
-
-	slice := make([]int, size, size)
-	rand.Seed(time.Now().UnixNano())
-	for i := 0; i < size; i++ {
-		slice[i] = rand.Intn(999) - rand.Intn(999)
-	}
-	return slice
 }
