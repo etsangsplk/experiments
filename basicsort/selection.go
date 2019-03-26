@@ -45,3 +45,7 @@ func selectionSort(a []int) {
 	}
 
 }
+
+func selectionSortWithRecursion(a []int) {
+
+}

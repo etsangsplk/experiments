@@ -30,7 +30,7 @@ func main() {
 // Invariant is S is sorted.
 // Just grab an element from Unsorted list
 // * comparing this element to sorted list starting from last element of sorted list
-// * swap the previous element with current postion to make space
+// * (insert into sorted list at rightful place) swap the previous element with current postion to make space
 // * until the postion where the element infront is smaller
 // Repeat until unsorted list is of 1 element
 func insertionSort(a []int) {
@@ -52,5 +52,10 @@ func insertionSort(a []int) {
 		}
 		i++
 	}
+
+}
+
+func insertionSortWithRecursion(a []int) {
+	n := len(a)
 
 }

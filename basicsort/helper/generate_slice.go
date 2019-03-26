@@ -16,7 +16,7 @@ func GenerateSlice(size int) []int {
 	return slice
 }
 
-// helper swap function.
-func Swap(a *int, b *int) {
-	*a, *b = *b, *a
+func GenerateNumber() int {
+	rand.Seed(time.Now().UnixNano())
+	return rand.Intn(999) - rand.Intn(999)
 }
