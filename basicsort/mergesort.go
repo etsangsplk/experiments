@@ -55,6 +55,7 @@ func mergeSortedArrays(l []int, r []int) []int {
 		for i > 0 {
 			ret[k] = l[i]
 			i--
+			k++
 		}
 	}
 
@@ -62,6 +63,7 @@ func mergeSortedArrays(l []int, r []int) []int {
 		for j > 0 {
 			ret[k] = r[j]
 			j--
+			k++
 		}
 	}
 
