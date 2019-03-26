@@ -31,3 +31,38 @@ func mergeSort(a []int) {
 func mergeSortR(a []int, i int, j int) {
 
 }
+
+// Merge 2 sorted arrays l and r into a sorted array
+func mergeSortedArrays(l []int, r []int) []int {
+	n = len(l)
+	m = len(r)
+
+	ret = make([]int, n+m)
+
+	i, j, k := n, m, 0
+
+	for j > 0 && i > 0 {
+		if l[i] >= r[j] {
+			ret[k] = l[i]
+			i--
+		} else {
+			ret[k] = r[j]
+			j--
+		}
+	}
+
+	if i > 0 {
+		for i > 0 {
+			ret[k] = l[i]
+			i--
+		}
+	}
+
+	if j > 0 {
+		for j > 0 {
+			ret[k] = r[j]
+			j--
+		}
+	}
+
+}
