@@ -3,13 +3,16 @@ package main
 import (
 	"fmt"
 	"strings"
+
+	"../basicsort/helper"
 )
 
 func main() {
-	d := []string{
-		"",
-		"z",
-		"abcde",
+
+	d := []string{}
+
+	for i := 0; i < 20; i++ {
+		d = append(d, helper.GenerateString(i))
 	}
 
 	for _, s := range d {
