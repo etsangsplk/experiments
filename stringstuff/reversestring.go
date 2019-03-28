@@ -2,18 +2,26 @@ package main
 
 import (
 	"fmt"
+	"strings"
 )
 
 func main() {
-	s := "abcde"
-	fmt.Printf("string %s reverse string %s\n", s, reverse(s))
+	d := []string{
+		"",
+		"z",
+		"abcde",
+	}
 
-	s = ""
-	fmt.Printf("string %s reverse string %s\n", s, reverse(s))
-
-	s = "z"
-	fmt.Printf("string %s reverse string %s\n", s, reverse(s))
-
+	for _, s := range d {
+		fmt.Printf("string %s\n", s)
+		l := reverse(s)
+		r := ReverseRecur(s)
+		if !strings.EqualFold(l, r) {
+			fmt.Printf("reverse string %s recurrsive\n", l, r)
+		} else {
+			fmt.Printf("pass: %s\n", s)
+		}
+	}
 }
 
 // Note:
@@ -23,17 +31,30 @@ func reverse(s string) string {
 	n := len(s)
 	i := 0
 	j := n - 1
-	temp := make([]rune, n)
+	temp := []rune(s)
+	//temp := make([]rune, n)
 
 	for i <= j {
-		temp[i] = rune(s[j])
-		temp[j] = rune(s[i])
+		temp[i], temp[j] = rune(s[j]), rune(s[i])
 		i++
 		j--
 	}
 	return string(temp)
 }
 
-//func reverseRecur(s string, n int) string {
+func ReverseRecur(s string) string {
+	r := []rune(s)
+	i := 0
+	j := len(r) - 1
+	reverseRecur(r, i, j)
+	return string(r)
+}
 
-//}
+func reverseRecur(r []rune, i int, j int) {
+	if i < j {
+		r[i], r[j] = r[j], r[i]
+		i++
+		j--
+		reverseRecur(r, i, j)
+	}
+}
