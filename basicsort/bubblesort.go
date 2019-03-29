@@ -28,7 +28,7 @@ func main() {
  * Partition array into sorted and unsorted,
  * Bubble up largest element to the end of the unsorted array
  * Now shrink the unsorted by one and expand the sorted section at end by one
- * Repeat until the unsorted is of size one or less
+ * Repeat until the sorted array is of size equals to input array
  */
 func bubbleSort(a []int) {
 	n := len(a)
