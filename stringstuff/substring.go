@@ -71,6 +71,13 @@ func splitString(s string, sep string) []string {
 
 // Replace all occurrences of with string from s string with X.
 func replaceString(s string, with string) string {
+	n := len(s)
+	m := len(with)
+	if m > n {
+		return ""
+	}
+
+
 
 	return ""
 }
