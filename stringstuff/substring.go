@@ -28,12 +28,13 @@ func main() {
 func substring(source string, sub string) []int {
 	n := len(source)
 	m := len(sub)
+	ret := []int{}
 	if m > n {
 		return []int{}
 	}
 
 	if m == 0 {
-		return []int{}
+		return ret
 	}
 
 	i := n
@@ -47,7 +48,7 @@ func substring(source string, sub string) []int {
 		}
 	}
 
-	return []int{}
+	return ret
 }
 
 // Returns an array of strings tokenized by seperators.
