@@ -70,13 +70,21 @@ func splitString(s string, sep string) []string {
 }
 
 // Replace all occurrences of with string from s string with X.
-func replaceString(s string, with string) string {
+func replaceString(s string, tomask string) string {
 	n := len(s)
-	m := len(with)
+	m := len(tomask)
 	if m > n {
 		return ""
 	}
 
+	for i:=0; i< n-m-1; i++ {
+		for j:=0; j< m-1; j++ {
+			if s[i] != tomask[j] {
+				break; // skip the comparison agains tomask, 
+				// do next comparison on i++
+			}
+		}
+	}
 
 
 	return ""
