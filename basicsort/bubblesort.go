@@ -33,6 +33,8 @@ func main() {
 func bubbleSort(a []int) {
 	n := len(a)
 	i := 0
+
+	// i is the size of the sorted array
 	for i < n-1 {
 		// The inner loop is for swapping or bubbling the largest element to end of unsorted array
 		// Each time starts from first element, till to end of jsut beofre the srted array.
