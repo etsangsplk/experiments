@@ -17,6 +17,8 @@ func main() {
 	fmt.Printf("coefficient: %v\n", coeff)
 	ret := polynomial(n)
 	fmt.Printf("result: %v iteration: %d\n", ret, n)
+
+	fmt.Printf("result: %v iteration: %d\n", polynomialArray(n), n)
 }
 
 // Brutal force
@@ -28,7 +30,7 @@ func polynomial(n int) int {
 	return coeff[n]*x + polynomial(n-1)
 }
 
-func polynomialArray(n) int {
+func polynomialArray(n int) int {
 	var ret int
 	for i := 0; i <= n; i++ {
 		ret = ret + coeff[i]*x
