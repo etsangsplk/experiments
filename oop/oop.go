@@ -8,12 +8,12 @@ type VehiclePrinter interface {
 
 
 type Vehicle struct {
-	licensePlate string
-	vehicletype string
+	LicensePlate string
+	Vehicletype string
 }
 
-func (v *Vehicle) LicensePlate()  string {
-	return fmt.Sprintf("LicensePlate: \n", v.licensePlate)
+func (v *Vehicle) PLicensePlate()  string {
+	return fmt.Sprintf("LicensePlate: \n", v.LicensePlate)
 }
 
 //func (v *Vehicle) String() {
@@ -37,15 +37,15 @@ type Car struct {
 
 func NewCar() *Car{
 	return &Car{
-		licensePlate: "1234",
-		vehicletype: "car",
+		Vehicle.LicensePlate: "1234",
+		Vehicle.Vehicletype: "car",
 		wheels: 4,
 		comment: "i am a car",
 	}
 }
 
 func (c *Car) printMe()  {
-	fmt.Printf("licensePlate: %v car details: %v\n", c.LicensePlate(), c.String())
+	fmt.Printf("licensePlate: %v car details: %v\n", c.PLicensePlate(), c.String())
 }
 	
 
@@ -57,8 +57,8 @@ type Bus struct {
 
 func NewBus() *Bus{
 	return &Bus {
-		licensePlate: "5678",
-		vehicletype: "bus",
+		Vehicle.LicensePlate: "5678",
+		Vehicle.Vehicletype: "bus",
 		wheels: 2,
 		comment: "i am a bus",
 	}
