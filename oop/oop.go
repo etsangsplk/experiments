@@ -16,11 +16,6 @@ func (v *Vehicle) PLicensePlate() string {
 	return fmt.Sprintf("LicensePlate: %v\n", v.LicensePlate)
 }
 
-//func (v *Vehicle) String() {
-//	fmt.Printf("Vehicle: \n", v)
-//}
-
-
 type FourWheeler struct {
 	wheels int
 }
@@ -38,6 +33,7 @@ type Car struct {
 
 func NewCar() *Car{
 	return &Car{
+		// embedded annoymous struct available via type only
 		Vehicle: Vehicle{ LicensePlate: "1234",
 						  Vehicletype: "car",},
 		FourWheeler: FourWheeler{ wheels: 4,},
