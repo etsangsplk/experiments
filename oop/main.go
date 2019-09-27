@@ -9,7 +9,7 @@ func main() {
 	vl := []VehiclePrinter{c, b}
 
 	for k, v := range vl {
-		fmt.Printf("k :%v v: %v\n ", k, v)
+		fmt.Printf("k :%v v: %v\n ", k, v.printMe())
 	}
 
 }
