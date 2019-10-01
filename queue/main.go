@@ -19,11 +19,13 @@ type Q struct {
 	Queue
 	items       []ItemType
 	currentSize int
+	capacity int
 }
 
 func New(size int) *Queue {
 	return &Q{
 		items: make([]ItemType, size),
+		capacity: size,
 	}
 }
 
