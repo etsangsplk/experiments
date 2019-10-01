@@ -36,9 +36,12 @@ func (q *Q) isEmpty() bool {
 }
 
 func (q *Q) Enqueue(i ItemType) {
-
+	q.items = append(q.items, i)
+	q.currentSize++
 }
 
 func (q *Q) Dequeue() ItemType {
-
+	x := q.items[0]
+	q.items = q.items[1:]
+	return x
 }
