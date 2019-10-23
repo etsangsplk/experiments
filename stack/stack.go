@@ -1,14 +1,10 @@
 package main
 
-import "fmt"
-
-type Item interface {
-	fmt.Stringer
-}
+import "github.com/etsangsplk/experiments/util"
 
 type Stack interface {
-	Pop() Item
-	Push(Item)
+	Pop() util.Item
+	Push(util.Item)
 	IsFull() bool
 	IsEmpty() bool
 	Size() int
@@ -16,19 +12,19 @@ type Stack interface {
 
 type S struct {
 	Stack
-	Items    []Item
+	Items    []util.Item
 	size     int
 	capacity int
 }
 
 func New(s int) *S {
 	return &S{
-		Items:    make([]Item, s),
-		capacity: s,
+		Items:    make([]util.Item, s),
+		capacity: 0,
 	}
 }
 
-func (s *S) Push(i Item) {
+func (s *S) Push(i util.Item) {
 	if s.IsFull() {
 		return
 	}
@@ -36,8 +32,8 @@ func (s *S) Push(i Item) {
 	s.size++
 }
 
-func (s *S) Pop() Item {
-	var x Item
+func (s *S) Pop() util.Item {
+	var x util.Item
 	if s.IsEmpty() {
 		return x
 	}
@@ -52,7 +48,7 @@ func (s *S) IsEmpty() bool {
 }
 
 func (s *S) IsFull() bool {
-	return s.Size() == s.capacity
+	return s.Size() == cap(s.Items)
 }
 func (s *S) Size() int {
 	return s.size
