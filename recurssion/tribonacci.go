@@ -4,18 +4,14 @@ import "fmt"
 
 var result = make([]int, 37)
 
+func init() {
+	result[0] = 0
+	result[1] = 1
+	result[2] = 1
+}
+
 func tribonacci(n int) int {
-	switch n {
-	case 0:
-		result[0] = 0
-		return result[0]
-	case 1:
-		result[1] = 1
-		return result[1]
-	case 2:
-		result[2] = 1
-		return result[2]
-	default:
+	if n > 3 {
 		var n3, n2, n1 int
 		if 0 != result[n-3] {
 			n3 = result[n-3]
@@ -35,8 +31,8 @@ func tribonacci(n int) int {
 			n1 = tribonacci(n - 1)
 			result[n-1] = n1
 		}
-		return n3 + n2 + n1
 	}
+	return result[n-3] + result[n-2] + result[n-1]
 }
 
 func main() {

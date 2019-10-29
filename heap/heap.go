@@ -6,7 +6,7 @@ type Item util.Item
 
 type Heap interface {
 	//heap.Interface
-	Push(x Item)
+	Push(x Item, priority int)
 	Pop() Item
 	Swap(x, y *Item)
 	Heapify()
@@ -17,7 +17,7 @@ type H1 struct {
 	Items []Item
 }
 
-func (h *H1) Push(x Item) {
+func (h *H1) Push(x Item, priority int) {
 
 }
 
