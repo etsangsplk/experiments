@@ -2,36 +2,36 @@ package main
 
 import "github.com/etsangsplk/experiments/util"
 
-type Item util.Item
+type ComparableItem util.ComparableItem
 
 type Heap interface {
 	//heap.Interface
-	Push(x Item, priority int)
-	Pop() Item
-	Swap(x, y *Item)
+	Push(x ComparableItem, priority int)
+	Pop() ComparableItem
+	Swap(x, y *ComparableItem)
 	Heapify()
 }
 
 type H1 struct {
 	Heap
-	Items []Item
+	Items []ComparableItem
 }
 
 func NewH1() *H1 {
 	return &H1{
-		Items: []Item{},
+		Items: []ComparableItem{},
 	}
 }
 
-func (h *H1) Push(x Item, priority int) {
+func (h *H1) Push(x ComparableItem, priority int) {
 
 }
 
-func (h *H1) Pop() Item {
+func (h *H1) Pop() ComparableItem {
 
 }
 
-func (h *H1) Swap(x, y *Item) {
+func (h *H1) Swap(x, y *ComparableItem) {
 
 }
 

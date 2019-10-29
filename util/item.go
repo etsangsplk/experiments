@@ -9,7 +9,7 @@ type Item interface {
 	fmt.Stringer
 }
 
-type SortableItem interface {
+type ComparableItem interface {
 	fmt.Stringer
 	sort.Interface
 }
