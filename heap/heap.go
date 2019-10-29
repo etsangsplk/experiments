@@ -17,6 +17,12 @@ type H1 struct {
 	Items []Item
 }
 
+func NewH1() *H1 {
+	return &H1{
+		Items: []Item{},
+	}
+}
+
 func (h *H1) Push(x Item, priority int) {
 
 }
