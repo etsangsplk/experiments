@@ -23,6 +23,22 @@ func NewH1() *H1 {
 	}
 }
 
+func (h *H1) BuildHeap(x []ComparableItem) {
+
+    n := len(x)
+    for (i:= n/1; i >= ) {
+
+    }
+}
+
+func (h *H1) MergeHeap(x *H1) {
+
+}
+
+func (h *H1) AddItems(x []ComparableItem) {
+
+}
+
 func (h *H1) Push(x ComparableItem, priority int) {
 
 }

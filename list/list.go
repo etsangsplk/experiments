@@ -7,3 +7,11 @@ type L interface {
 	DeleteAt(x int)
 	GetItemAt(x int) Item
 }
+
+type List1 struct {
+	L
+}
+
+func NewList(size int) *List1 {
+
+}

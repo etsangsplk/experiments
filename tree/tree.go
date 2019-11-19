@@ -1,6 +1,8 @@
 package main
 
-type Tree interface {
+import "fmt"
+
+type T interface {
 	PostOrder()
 	PreOrder()
 	InOrder()
@@ -10,4 +12,17 @@ type Tree interface {
 	IsEmpty() bool
 	Mirror()
 	ToList()
+}
+
+type BTree1 struct {
+	T
+	fmt.Stringer
+}
+
+func (t *BTree1) NewBTree1() *BTree1 {
+	return BTree1{}
+}
+
+func (t *BTree1) ToString() string {
+	return
 }
