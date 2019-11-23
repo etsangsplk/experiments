@@ -10,10 +10,15 @@ func main() {
 	fmt.Println("Reading expression input: > ")
 	fmt.Println("----------------------------- ")
 	r := bufio.NewReader(os.Stdin)
-	s := bufio.NewScanner(r)
+	scanner := bufio.NewScanner(r)
 
-	for s.Scan() {
-		fmt.Printf("read: %s ", s.Text())
+	for scanner.Scan() {
+		fmt.Printf("read: %s ", scanner.Text())
 	}
-	fmt.Println("----------------------------- ")
+
+	fmt.Println("-------Done processing--------- ")
+
+	if err := scanner.Err(); err != nil {
+		fmt.Fprintf(os.Stderr, "reading standard input: ", err)
+	}
 }
