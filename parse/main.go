@@ -13,7 +13,7 @@ func main() {
 	scanner := bufio.NewScanner(r)
 
 	for scanner.Scan() {
-		fmt.Printf("read: %s ", scanner.Text())
+		fmt.Printf("read: %s \n", scanner.Text())
 	}
 
 	fmt.Println("-------Done processing--------- ")
@@ -21,4 +21,5 @@ func main() {
 	if err := scanner.Err(); err != nil {
 		fmt.Fprintf(os.Stderr, "reading standard input: ", err)
 	}
+
 }
